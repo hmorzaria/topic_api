@@ -1,11 +1,15 @@
 #' @title Sentiment analysis of climate change communications in the Northern Gulf of California
-#' @description Functions to get data
-#' @details Functions used on sentiment_climate_change.Rmd
+#' @description Functions to process climate change texts 
+#' @details Using model developed for 2016 data
 #' @author Hem Nalini Morzaria-Luna hmorzarialuna@gmail.com
-#' @date September 2019
+#' @date October 2019
 
+.packages = c(
+  "RCurl", "XML","rvest", "httr", "tidyverse",
+  "tidytext", "wordcloud","tm", "reshape2","topicmodels","robotstxt","janitor",
+  "tokenizers","rjson")
 
-get_articles <- function(eachlink){
+get_article <- function(eachlink){
   
   print(paste("Analyzing",eachlink))
   
